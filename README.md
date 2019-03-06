@@ -65,7 +65,27 @@ Check the IRI logs with
 ```
 docker logs iota_cliri
 ```
+## Build your own Docker container (for the paranoid)
 
+Enter the cliri-znet folder
+```
+cd cliri-znet
+```
+
+Clone the original CLIRI github repository
+
+```
+git clone https://github.com/iotaledger/cliri.git
+```
+
+Change the lines in the docker-compose.yml, build and run your node
+```
+#    image: ioiobzit/cliri-0.2.1 # comment to build your own
+    build:                     # ucomment to build your own
+      context: .               # ucomment to build your own
+      dockerfile: Dockerfile   # ucomment to build your own
+```
+    
 ## Warnings
 
 ### Ports
@@ -117,3 +137,27 @@ Change ports accordingly if the ports in the docker-compose have been changed.
 For more information about the projects please refer to the following github repositories:
 
 * [CLIRI - Coordinator Less IOTA Node](https://github.com/iotaledger/cliri)
+
+# Author
+
+* **Antonio Nardella** - [Twitter](https://twitter.com/antonionardella) - info at antonionardella dot it
+
+# License
+
+This project is licensed under the ICS License - see the [LICENSE.md](LICENSE.md) file for details
+
+# Contributing
+
+## Donations
+
+**Donations always welcome**:
+
+IOTA:
+```
+QOQJDKYIZYKWASNNILZHDCTWDM9RZXZV9DUJFDRFWKRYPRMTYPEXDIVMHVRCNXRSBIJCJYMJ9EZ9USHHWKEVEOSOZB
+```
+
+BTC:
+```
+1BFgqtMC2nfRxPRge5Db3gkYK7kDwWRF79
+```
