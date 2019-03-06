@@ -98,7 +98,7 @@ Port/Type | Use
 14600/udp | IOTA/IRI UDP connection port
 15600/tcp | IOTA/IRI TCP connection port
 
-Please assure yourself to set your firewall accordingly, the ports are opened on 0.0.0.0 (all IP adresses, internal and external)
+Please assure yourself to set your firewall accordingly, the ports are opened on 0.0.0.0 (all IP adresses, internal and external)  
 Change ports accordingly if the ports in the docker-compose have been changed.
 
 ### Remote API limits
