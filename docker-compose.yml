@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+
+  cliri:
+    container_name: iota_cliri
+    hostname: cliri
+    image: ioiobzit/cliri-0.2.1
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./volumes/cliri/cliri.ini:/cliri/conf/cliri.ini:ro
+      - ./volumes/cliri/ixi:/cliri/ixi:rw
+      - ./volumes/cliri/data:/cliri/data:rw
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+     # Use the following for 8GB; comment following line if other setting is chosen
+     # - JAVA_MAX_MEMORY=8192m
+     # Uncomment the following for 4GB
+      - JAVA_MAX_MEMORY=4096m
+      - JAVA_MIN_MEMORY=256m
+      - DOCKER_IRI_REMOTE_LIMIT_API="removeNeighbors"
+#      - DOCKER_IRI_MONITORING_API_PORT_ENABLE=1
+    expose:
+      - "14266"
+    ports:
+      - "14600:14600/udp"
+      - "15600:15600/tcp"
+      - "14265:14265"
+# To get things started
+    command: ["-c", "/cliri/conf/cliri.ini"]
