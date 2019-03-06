@@ -5,10 +5,10 @@ services:
   cliri:
     container_name: iota_cliri
     hostname: cliri
-    image: ioiobzit/cliri-0.2.1
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
+    image: ioiobzit/cliri-0.2.1 # comment to build your own
+#    build:                     # ucomment to build your own
+#      context: .               # ucomment to build your own
+#      dockerfile: Dockerfile   # ucomment to build your own
     restart: unless-stopped
     volumes:
       - ./volumes/cliri/cliri.ini:/cliri/conf/cliri.ini:ro
